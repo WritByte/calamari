@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To exist and not exist</title>
+  <style>
+  @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+  @font-face {
+    font-family: "Splat";
+    src: url("https://raw.githubusercontent.com/North-West-Wind/splatoon3-fonts/refs/heads/main/Decrypted/BlitzBold.otf");
+  }
+  @font-face {
+    font-family: "Toon";
+    src: url("https://raw.githubusercontent.com/North-West-Wind/splatoon3-fonts/refs/heads/main/Decrypted/AsiaKERIN-M.ttf");
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: black url("https://i0.wp.com/www.wildlifenomads.com/wp-content/uploads/2025/04/sperm-whale-vs-giant-squid.webp") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: "Toon";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrapper {
+    width: 95%;
+    max-width: 1260px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .name {
+    background: black;
+    color: #a93cff;
+    display: inline-block;
+    padding: 1px 30px;
+    font-size: 1.6em;
+    min-width: 150px;
+    text-align: center;
+    font-family: "Splat";
+    border-radius: 10px 10px 0 0;
+    border-bottom: 4px dashed white;
+    margin-left: 0;
+    margin-bottom: -5px;
+    position: relative;
+    z-index: 2;
+  }
+  .textbox {
+    background: rgba(20, 20, 20, 0.95);
+    padding: 30px;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    border-radius: 0px 15px 40px 15px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .profile-icon img {
+    width: 120px;
+    height: auto;
+    background: transparent;
+    display: block;
+    transform: translateY(-5px);
+  }
+  .text-message {
+    line-height: 1.4;
+    font-size: 1.1rem;
+    overflow-wrap: anywhere;
+  }
+  .text-message p {
+    margin: 0 0 10px 0;
+  }
+  .text-message p:last-child {
+    margin-bottom: 0;
+  }
+  a {
+    color: #a93cff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  @media (max-width: 600px) {
+    .textbox {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+    .wrapper {
+      align-items: center;
+    }
+    .name {
+      font-size: 1.2em;
+      min-width: 120px;
+      margin-left: 0;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="name">Marzi</div>
+    <div class="textbox">
+      <div class="profile-icon">
+        <img src="https://calamari.qzz.io/lune/nyaje.png?v=1" alt="Marzi Icon">
+      </div>
+      <div class="text-message">
+        <p>hellloooo! i'm calamari, truly one of the many unique ones out there. you've encountered the nuclear test site, either by luck, randomness, or in some other mysterious way, so good job. you're seeing what will be an old, soon to be extinct page as I figure out what to do here.</p>
+        <p>professionally, I am Sapphiku. I tend to draw characters from Splatoon, as Splatoon is one of my huge major interests alongside the goddess of the sea herself and what the water offers (xdxd) and yeah that's just about it!</p>
+        <p>Stop by again soon, and please consider checking out my <a href="/nekoweb">main site</a>.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
