@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SNS of Sapphiku</title>
+    <meta name="description" content="The digital artist situation is crazy." />
+
+    <meta property="og:title" content="SNS of Sapphiku" />
+    <meta
+      property="og:description"
+      content="The digital artist situation is crazy."
+    />
+    <meta property="og:image" content="/host/extr/pfpfp.png" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#a93cff" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Sapphiku" />
+    <meta name="twitter:title" content="SNS of Sapphiku" />
+    <meta
+      name="twitter:description"
+      content="The digital artist situation is crazy."
+    />
+    <meta name="twitter:image" content="/host/extr/pfpfp.png" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+      @font-face {
+        font-family: "Splat";
+        src: url("https://raw.githubusercontent.com/North-West-Wind/splatoon3-fonts/refs/heads/main/Decrypted/BlitzBold.otf");
+      }
+
+      @font-face {
+        font-family: "Toon";
+        src: url("https://raw.githubusercontent.com/North-West-Wind/splatoon3-fonts/refs/heads/main/Decrypted/AsiaKERIN-M.ttf");
+      }
+
+      :root {
+        --bg-body: #000;
+        --soap: #18031f;
+        --soapclr: #3f324f;
+        --marzilogue: rgba(20, 20, 20, 0.98);
+        --marzilogue-name: #000000;
+        --saph-usr-color: var(--saph-purple);
+        --saph-usr-mid: rgba(98, 58, 130, 0.54);
+        --saph-usr-transparent: rgba(0, 0, 0, 0);
+        --marzilogue-border: #333333;
+        --txt-color: #ffffff;
+        --txt-alt-color: #dddddd;
+        --saph-purple: #a93cff;
+      }
+
+      html {
+        min-height: 100%;
+        background-color: var(--bg-body);
+        background-image: url("/host/sns/germ.png");
+        background-repeat: repeat;
+        background-position: top left;
+        background-size: 480px auto;
+        background-attachment: fixed;
+        color: var(--txt-color);
+        font-family: "Toon", system-ui, -apple-system, sans-serif;
+        margin: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        padding: 2rem 1rem 10rem 1rem;
+      }
+
+      .box {
+        background-color: var(--soap);
+        max-width: 480px;
+        margin: 0 auto;
+        border-radius: 9px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .profile {
+        width: 100%;
+        position: relative;
+      }
+
+      .profile img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .profile::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          var(--saph-usr-transparent) 65%,
+          var(--saph-usr-mid) 85%,
+          var(--saph-usr-color) 100%
+        );
+        pointer-events: none;
+      }
+
+      .profile-info {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 90%;
+        z-index: 2;
+      }
+
+      .profile-info .name {
+        font-size: 2em;
+        font-weight: 700;
+        margin: 0;
+        color: var(--txt-color);
+        font-family: "Splat", sans-serif;
+      }
+
+      .profile-info .bio {
+        font-size: 1.15em;
+        color: var(--txt-alt-color);
+        margin-top: 4px;
+      }
+
+      .social {
+        padding: 1.75em;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .snbox {
+        background-color: var(--soapclr);
+        padding: 14px 1.25em;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1em;
+        cursor: pointer;
+        transition: background 0.2s, outline 0.1s;
+        text-decoration: none;
+        color: inherit;
+        border: 0;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
+        font-family: inherit;
+        font-size: 100%;
+        -webkit-tap-highlight-color: transparent;
+        min-height: 58px;
+        vertical-align: middle;
+      }
+
+      button.snbox {
+        appearance: none;
+        -webkit-appearance: none;
+        margin: 0;
+        line-height: normal;
+      }
+
+      .snbox:focus-visible {
+        outline: 2px solid var(--txt-color);
+        outline-offset: 2px;
+      }
+
+      .snbox img {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+        display: block;
+        object-fit: contain;
+        align-self: center;
+        vertical-align: middle;
+        border: 0;
+      }
+
+      .text {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1;
+        display: inline-flex;
+        align-items: center;
+        margin: 0;
+        padding-top: 2px;
+      }
+
+      .splatbox {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 100;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.25s ease, visibility 0.25s ease;
+        pointer-events: none;
+      }
+
+      .splatbox.show {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .splatbox .whoami {
+        background: var(--marzilogue-name);
+        color: var(--saph-purple);
+        display: inline-block;
+        padding: 1px 30px;
+        font-size: 1.4em;
+        min-width: 120px;
+        text-align: center;
+        font-family: "Splat", sans-serif;
+        border-radius: 10px 10px 0 0;
+        border-bottom: 4px dashed var(--txt-color);
+        margin-left: 0;
+        margin-bottom: -5px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .splatbox .watmsg {
+        background: var(--marzilogue);
+        padding: 20px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        border-radius: 0px 15px 30px 15px;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid var(--marzilogue-border);
+      }
+
+      .splatbox .profile-icon img {
+        width: 80px;
+        height: auto;
+        background: transparent;
+        display: block;
+        transform: translateY(-2px);
+      }
+
+      .splatbox .text-message {
+        line-height: 1.4;
+        font-size: 1rem;
+        overflow-wrap: anywhere;
+      }
+
+      .splatbox .text-message p {
+        margin: 0 0 8px 0;
+      }
+
+      .splatbox .text-message p:last-child {
+        margin-bottom: 0;
+      }
+
+      @media (max-width: 600px) {
+        .splatbox .watmsg {
+          flex-direction: column;
+          text-align: center;
+          padding: 15px;
+        }
+        .splatbox {
+          align-items: center;
+        }
+        .splatbox .whoami {
+          font-size: 1.2em;
+          min-width: 100px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding: 0.75rem 0.75rem 8.75rem 0.75rem;
+        }
+        .box {
+          width: 100%;
+        }
+        .social {
+          padding: 1.1em;
+          gap: 0.7em;
+        }
+        .snbox {
+          padding: 0.9em 1em;
+          min-height: 3.25rem;
+        }
+        .snbox img {
+          width: 28px;
+          height: 28px;
+        }
+        .text {
+          font-size: 18px;
+        }
+        .splatbox {
+          bottom: 0.75rem;
+          width: calc(100% - 1.5rem);
+        }
+        .splatbox .profile-icon img {
+          width: 4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="box">
+      <header class="profile">
+        <img
+          alt="my profile picture"
+          src="/host/extr/pfpfp.png"
+        />
+        <div class="profile-info">
+          <h1 class="name">Sapphiku</h1>
+          <p class="bio">To exist and not exist.</p>
+        </div>
+      </header>
+
+      <nav class="social" aria-label="my socials">
+        <a
+          href="https://sapphiku.nekoweb.org"
+          target="_blank"
+          rel="noopener"
+          class="snbox"
+          data-name="Main Website"
+        >
+          <img src="/host/extr/squid.png" alt="" aria-hidden="true" />
+          <span class="text">Main Website</span>
+        </a>
+
+        <a
+          href="https://twitter.com/Sapphiku"
+          target="_blank"
+          rel="noopener"
+          class="snbox"
+          data-name="Twitter"
+        >
+          <img
+            src="https://s.magecdn.com/social/mw-twitter.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <span class="text">Twitter</span>
+        </a>
+
+        <a
+          href="https://www.instagram.com/sapphik.u/"
+          target="_blank"
+          rel="noopener"
+          class="snbox"
+          data-name="Instagram"
+        >
+          <img
+            src="https://s.magecdn.com/social/mw-instagram.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <span class="text">Instagram</span>
+        </a>
+
+        <button
+          type="button"
+          class="snbox"
+          id="btn-discord"
+          aria-label="Copy Username"
+        >
+          <img
+            src="https://s.magecdn.com/social/mw-discord.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <span class="text">Discord</span>
+        </button>
+
+        <a
+          href="https://pinterest.com/Sapphiku"
+          target="_blank"
+          rel="noopener"
+          class="snbox"
+          data-name="Pinterest"
+        >
+          <img
+            src="https://s.magecdn.com/social/mw-pinterest.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <span class="text">Pinterest</span>
+        </a>
+
+        <a
+          href="https://youtube.com/@Sapphiku"
+          target="_blank"
+          rel="noopener"
+          class="snbox"
+          data-name="YouTube"
+        >
+          <img
+            src="https://s.magecdn.com/social/mw-youtube.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <span class="text">YouTube</span>
+        </a>
+
+        <a
+          href="https://witchsky.app/profile/sapphiku.nekoweb.org"
+          target="_blank"
+          rel="noopener"
+          class="snbox"
+          data-name="Bluesky"
+        >
+          <img
+            src="https://cdn.simpleicons.org/bluesky/ffffff"
+            alt=""
+            aria-hidden="true"
+          />
+          <span class="text">Bluesky</span>
+        </a>
+
+        <button
+          type="button"
+          class="snbox"
+          id="btn-email"
+          aria-label="Copy Email Address"
+        >
+          <img
+            src="https://cdn.simpleicons.org/gmail/ffffff"
+            alt=""
+            aria-hidden="true"
+          />
+          <span class="text">Email</span>
+        </button>
+      </nav>
+    </main>
+
+    <div id="splatbx" class="splatbox" role="message" aria-live="polite">
+      <div class="whoami">Marzí</div>
+      <div class="watmsg">
+        <div class="profile-icon">
+          <img
+            src="https://64.media.tumblr.com/fb9dd4c50d71633768cb66d52ca062c3/24eeb89c5d3dbb09-13/s500x750/37ef49f0802b2d3ec5ed7d3e7437e1b11b9a80aa.pnj"
+            alt="marzi's icon"
+          />
+        </div>
+        <div class="text-message">
+          <p id="typed-text"></p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let t, y;
+      const $ = i => document.getElementById(i),
+        c = x => navigator.clipboard.writeText(x),
+        s = (m, k) => {
+          const b = $("splatbx"), e = $("typed-text");
+          clearTimeout(t); clearInterval(y);
+          b.classList.add("show"); e.replaceChildren();
+          if ("function" == typeof m) return m(e, k);
+          let i = 0;
+          y = setInterval(() => i < m.length ? e.textContent += m[i++] : (clearInterval(y), k && k()), 46);
+          t = setTimeout(() => b.classList.remove("show"), 10650);
+        };
+
+      $("btn-discord").onclick = () => c("sapphiku").then(() => s("I copied my Discord into your clipboard inventory. Sorry though, I don't usually ever accept friend requests unless it's for legitimate reasons to be messaging me for."));
+
+      $("btn-email").onclick = () => {
+        const m = atob("b3ZtQHBueW56bmV2LmRtbS52Yg==").replace(/[a-z]/gi, x => String.fromCharCode(x.charCodeAt(0) + (x.toLowerCase() < 'n' ? 13 : -13)));
+        c(m).then(() => s(e => {
+          e.append(Object.assign(document.createElement("span"), { textContent: m }));
+          let x = " - not sure why you would need this, but here you go.", i = 0;
+          y = setInterval(() => i < x.length ? e.append(x[i++]) : clearInterval(y), 46);
+        }));
+      };
+
+      document.querySelectorAll("a.snbox").forEach(a => {
+        a.onclick = e => {
+          e.preventDefault();
+          s(`Now boarding to ${a.dataset.name || "somewhere"} - see you later, I guess.`, () => setTimeout(() => window.open(a.href, "_blank", "noopener"), 150));
+        };
+        a.oncontextmenu = e => {
+          e.preventDefault();
+          c(a.href).then(() => s("Link copied for you. It's now in your clipboard inventory, I think."));
+        };
+      });
+    </script>
+  </body>
+</html>
