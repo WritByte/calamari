@@ -464,24 +464,24 @@
       let t, y;
       const $ = i => document.getElementById(i),
         c = x => navigator.clipboard.writeText(x),
+        r = () => { clearTimeout(t); t = setTimeout(() => $("splatbx").classList.remove("show"), 4600); },
         s = (m, k) => {
           const b = $("splatbx"), e = $("typed-text");
           clearTimeout(t); clearInterval(y);
           b.classList.add("show"); e.replaceChildren();
-          if ("function" == typeof m) return m(e, k);
+          if ("function" == typeof m) { m(e, () => { r(); k && k(); }); return; }
           let i = 0;
-          y = setInterval(() => i < m.length ? e.textContent += m[i++] : (clearInterval(y), k && k()), 46);
-          t = setTimeout(() => b.classList.remove("show"), 10650);
+          y = setInterval(() => i < m.length ? e.textContent += m[i++] : (clearInterval(y), r(), k && k()), 46);
         };
 
       $("btn-discord").onclick = () => c("sapphiku").then(() => s("I copied my Discord into your clipboard inventory. Sorry though, I don't usually ever accept friend requests unless it's for legitimate reasons to be messaging me for."));
 
       $("btn-email").onclick = () => {
         const m = atob("b3ZtQHBueW56bmV2LmRtbS52Yg==").replace(/[a-z]/gi, x => String.fromCharCode(x.charCodeAt(0) + (x.toLowerCase() < 'n' ? 13 : -13)));
-        c(m).then(() => s(e => {
+        c(m).then(() => s((e, done) => {
           e.append(Object.assign(document.createElement("span"), { textContent: m }));
           let x = " - not sure why you would need this, but here you go.", i = 0;
-          y = setInterval(() => i < x.length ? e.append(x[i++]) : clearInterval(y), 46);
+          y = setInterval(() => i < x.length ? e.append(x[i++]) : (clearInterval(y), done()), 46);
         }));
       };
 
